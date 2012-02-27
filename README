@@ -1,0 +1,22 @@
+General
+=======
+This is a script which updates all SVN references in ticket descriptions and
+ticket_change entries in the trac database. It is assumed that the GIT repo was
+created using `git svn clone -s`. All SVN commit references that have no match
+in the table are left untouched.
+
+Usage
+=====
+1. Run `createSVN2GITmap.sh` in the git repository.
+2. Run `tracdb_update.pl` with the trac database and the map file you created as arguments.
+
+Requirements
+============
+
+1. git
+2. Perl
+3. Perl's DBI::SQLite (`perl -MCPAN -e "install DBI::SQLite"` to install)
+
+License
+=======
+This software is released under the WTFPL license.
